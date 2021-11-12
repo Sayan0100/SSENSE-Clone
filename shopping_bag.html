@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Favorit SSENSE Inter";
+        color: #777;
+      }
+      #nav-div {
+        display: flex;
+        overflow: hidden;
+        background-color: whitesmoke;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      #ul-left {
+        margin-top: 1%;
+        float: left;
+        margin-left: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      #ul-right {
+        margin-top: 1%;
+        float: right;
+        margin-right: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      ul li {
+        display: inline-block;
+        margin: 0px 8px;
+      }
+      a {
+        text-decoration: none;
+      }
+      #nav-img {
+        display: block;
+        text-align: center;
+        width: 500px;
+        height: 50px;
+      }
+      #nav-img img {
+        width: 30%;
+      }
+      #product_list {
+        width: 60%;
+        margin-left: 10%;
+        border: 1px solid grey;
+        margin-top: 5%;
+        margin-bottom: 10%;
+      }
+      #imgdiv {
+        display: inline-block;
+        width: 20%;
+        /* height: 50px; */
+        
+        margin: 1%;
+      }
+      #pro_desc_div {
+        display: inline-block;
+        width: 55%;
+        
+        margin: 1%;
+        vertical-align: top;
+        line-height: 30px;
+      }
+      #pro_price {
+        width: 15%;
+        display: inline-block;
+        
+        vertical-align: top;
+        margin: 1%;
+      }
+      img {
+        width: 100%;
+      }
+      #checkout {
+        
+        width: 23%;
+        margin-right: 3%;
+        float: right;
+        margin-top: 5%;
+      }
+      p {
+        margin: 2%;
+      }
+      #email {
+        width: 95%;
+        height: 35px;
+        margin: 2%;
+        margin-bottom: 5%;
+      }
+      #chkout_btn {
+        margin: 2%;
+        width: 95%;
+        height: 35px;
+        background-color: black;
+        color: white;
+      }
+      #total {
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        width: 18%;
+        border: 1px solid black;
+        margin-right: 3%;
+        margin-bottom: 5%;
+      }
+      #footer{
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        background-color: black;
+        width: 100%;
+        height: 35px;
+      }
+      .footer1{
+        width: 90%;
+        color: #777;
+        margin-left: 20%;
+      }
+      .footer1 span{
+        margin: 1%;
+        font-size: 12px;
+      }
+      .footer2{
+        width: 30%;
+        color: #777;
+        margin: auto;
+      }
+      .footer2 span{
+        margin: 1%;
+        font-size: 11px;
+      }
+      span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav-div">
+      <ul id="ul-left">
+        <li><a href="menswear.html">Menswear</a></li>
+        <li><a href="womenswear.html">Womenswear</a></li>
+        <li><a href="everything_else.html">Everything Else</a></li>
+        <li>Search</li>
+      </ul>
+
+      <div id="nav-img">
+        <a href="home.html"><img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQxx9bVGOKyglaEmi0mXikGtNlNS-4i0taYypO10wlpsfX-j_IHXNl79dlBQElwI_bw&usqp=CAU"
+        /></a>
+      </div>
+      <ul id="ul-right">
+        <li>ENGLISH</li>
+        <li><a href="login.html">Login</a></li>
+        <li>Whishlist</li>
+        <li><a href="shopping_bag.html">Shopping List</a></li>
+      </ul>
+    </div>
+    <div id="product_list"></div>
+    <div id="checkout">
+      <p>CHECKOUT</p>
+      <p>Enter your Email ID as a guest</p>
+      <p>Email ID:</p>
+      <input id="email" type="email" />
+      <br />
+      <button id="chkout_btn">PROCEED TO CHECKOUT</button>
+    </div>
+    <div id="total">
+      <p style="color: black;">Total Price : </p>
+      <p id="price"></p>
+    </div>
+    <div id="footer">
+      <div class="footer1">
+        <span>COUNTRY/REGION : INDIA</span><span>CUSTOMER CARE</span
+        ><span>LOCATION</span><span>EDITORIAL ARCHIVE</span
+        ><span>CAREERS</span><span>AFFILATES</span><span>SITEMAP</span>
+      </div>
+      <div class="footer2">
+        <span>2021 ssense.com</span><span>Terms & Conditions</span
+        ><span>Privacy Policy</span><span>Cookies</span
+        ><span>Accessibility</span>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var cartItems = JSON.parse(localStorage.getItem("cartItem"));
+  showcartItems(cartItems);
+  var sum = 0;
+  function showcartItems(cartItems) {
+    cartItems.map(function (item) {
+      var imgdiv = document.createElement("div");
+      imgdiv.setAttribute("id", "imgdiv");
+
+      var pro_desc_div = document.createElement("div");
+      pro_desc_div.setAttribute("id", "pro_desc_div");
+
+      var pro_price = document.createElement("div");
+      pro_price.setAttribute("id", "pro_price");
+
+      var img = document.createElement("img");
+      img.setAttribute("src", item.img_url);
+
+      var p1 = document.createElement("p");
+      p1.textContent = item.product;
+      p1.setAttribute("class", "pro_p");
+
+      var p2 = document.createElement("p");
+      p2.textContent = item.pro_desc;
+      p2.setAttribute("class", "pro_p");
+
+      var p3 = document.createElement("p");
+      p3.textContent = "$" + item.price + " USD";
+      p3.setAttribute("class", "pro_p");
+
+      var hr = document.createElement("hr")
+      
+      imgdiv.append(img);
+      pro_desc_div.append(p1, p2);
+      pro_price.append(p3);
+
+      document
+        .getElementById("product_list")
+        .append(imgdiv, pro_desc_div, pro_price,hr);
+
+      document.querySelector("body").append(product_list);
+    });
+  }
+
+  var total = cartItems.reduce(function(acc,cv){
+    return acc + Number(cv.price)
+  },0);
+  
+  document.getElementById("price").textContent = "$" + total;
+
+  document.getElementById("chkout_btn").addEventListener("click", function(){
+    checkout();
+  })
+
+  var email = document.getElementById("email")
+
+  function checkout(){
+    if(email.value.length === 0){
+      alert("Fill the Email Address");
+    }else{
+      window.location.href = "checkout.html"
+    }
+  }
+</script>

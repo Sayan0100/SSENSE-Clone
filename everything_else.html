@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything Else</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+      }
+      #nav-div {
+        display: flex;
+        overflow: hidden;
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      #ul-left {
+        margin-top: 1%;
+        float: left;
+        margin-left: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      #ul-right {
+        margin-top: 1%;
+        float: right;
+        margin-right: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      ul li {
+        display: inline-block;
+        margin: 0px 8px;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      #nav-img {
+        display: block;
+        text-align: center;
+        width: 500px;
+        height: 50px;
+      }
+      #nav-img img {
+        width: 30%;
+      }
+      #everything_else{
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+          grid-gap: 3%;
+          margin: 5%;
+          width: 85%;
+          margin-left: 9%;
+          margin-bottom: 10%;
+      }
+      #imgdiv{
+        text-align: center;
+      }
+      #pro_img{
+          width: 50%;
+      }
+      .pro_p{
+          font-size: 15px;
+          font-weight: 300;
+      }
+      #sort{
+          width: 30%;
+          margin-top: 3%;
+          float: left;
+          margin-left: 1%;
+      }
+      #sort button{
+          display: inline-block;
+          width: 50%;
+          background-color: black;
+          color: white;
+          margin: 1%;
+          cursor: pointer;
+      }
+      #footer{
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        background-color: black;
+        width: 100%;
+        height: 35px;
+      }
+      .footer1{
+        width: 90%;
+        color: #777;
+        margin-left: 20%;
+      }
+      .footer1 span{
+        margin: 1%;
+        font-size: 12px;
+      }
+      .footer2{
+        width: 30%;
+        color: #777;
+        margin: auto;
+      }
+      .footer2 span{
+        margin: 1%;
+        font-size: 11px;
+      }
+      span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <div id="nav-div">
+        <ul id="ul-left">
+          <li><a href="menswear.html">Menswear</a></li>
+        <li><a href="womenswear.html">Womenswear</a></li>
+        <li><a href="everything_else.html">Everything Else</a></li>
+        <li>Search</li>
+        </ul>
+  
+        <div id="nav-img">
+          <a href="home.html"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQxx9bVGOKyglaEmi0mXikGtNlNS-4i0taYypO10wlpsfX-j_IHXNl79dlBQElwI_bw&usqp=CAU"
+          /></a>
+        </div>
+        <ul id="ul-right">
+          <li>ENGLISH</li>
+          <li><a href="login.html">Login</a></li>
+          <li>Whishlist</li>
+          <li><a href="shopping_bag.html">Shopping List</a></li>
+        </ul>
+      </div>
+      <div id="sort">
+        <button onclick="lowhigh()">Low to High</button>
+        <button onclick="highlow()">High to Low</button>
+    </div>
+      <div id="everything_else"></div>
+      <div id="footer">
+        <div class="footer1">
+          <span>COUNTRY/REGION : INDIA</span><span>CUSTOMER CARE</span
+          ><span>LOCATION</span><span>EDITORIAL ARCHIVE</span
+          ><span>CAREERS</span><span>AFFILATES</span><span>SITEMAP</span>
+        </div>
+        <div class="footer2">
+          <span>2021 ssense.com</span><span>Terms & Conditions</span
+          ><span>Privacy Policy</span><span>Cookies</span
+          ><span>Accessibility</span>
+        </div>
+      </div>
+</body>
+</html>
+<script>
+    var data = [
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212338M000032_1/chloe-kids-navy-knit-cotton-and-wool-coat.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids Navy Cotton",
+      price: "320",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212188M000080_1/mm6-maison-margiela-kids-white-logo-slip-on-boots.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids White logo Boots",
+      price: "325",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212832M000023_1/crlnbsmns-kids-white-and-pink-button-down-bear-dress.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids white Dress",
+      price: "216",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212020M703011_1/marine-serre-ssense-exclusive-kids-black-and-tan-upcycled-t-shirt.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids black and tan T-Shirt",
+      price: "185",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212832M000025_1/crlnbsmns-kids-white-and-purple-bear-print-t-shirt.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids white purple T-Shirt",
+      price: "70",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212020M704003_1/marine-serre-ssense-exclusive-kids-black-upcycled-lounge-pants.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids long Pants",
+      price: "370",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212338M000018_1/chloe-baby-beige-fleece-glittered-logo-dress.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Baby white logo Dress",
+      price: "165",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212338M000069_1/chloe-kids-pink-and-white-logo-beanie.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids pink white Hat",
+      price: "95",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212020M701003_1/marine-serre-ssense-exclusive-kids-black-denim-jacket.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Black Denim Jacket",
+      price: "800",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212387M720001_1/kenzo-kids-beige-leopard-cardigan.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids Green Long Jeans",
+      price: "95",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212188M000082_1/mm6-maison-margiela-kids-white-velcro-low-sneakers.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "white Top-Up Boot",
+      price: "200",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212020M701002_1/marine-serre-ssense-exclusive-kids-blue-denim-jacket.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids Denim Jacket",
+      price: "455",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212404M701009_1/versace-kids-yellow-faux-fur-la-greca-jacket.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids Yellow Cardigan ",
+      price: "800",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212338M000040_1/chloe-baby-gold-ankle-boots.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Boots",
+      price: "765",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212020M704005_1/marine-serre-ssense-exclusive-kids-black-faded-moon-jeans.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Kids Black Bottom Down Jacket",
+      price: "265",
+    },
+    {
+      img_url:
+        "https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_1086,w_724/c_scale,h_480/f_auto,q_auto/212338M000064_1/chloe-kids-grey-organic-cotton-fleece-lounge-pants.jpg",
+      product: "KIDS THINGS",
+      pro_desc: "Moon Jeans",
+      price: "562",
+    },
+    ];
+    var body = document.querySelector("body")
+    var pro_div = document.getElementById("everything_else")
+    body.append(pro_div)
+    showproduct(data);
+    var product_arr = []
+
+    function lowhigh(){
+        data = data.sort(function(a,b){
+            return a.price - b.price;
+        })
+        showproduct(data)
+    }
+
+    function highlow(){
+        data = data.sort(function(a,b){
+            return b.price - a.price;
+        })
+        showproduct(data)
+    }
+
+    function showproduct(data){
+      pro_div.innerHTML = null
+        data.map(function(item){
+            var imgdiv = document.createElement("div")
+            imgdiv.setAttribute("id", "imgdiv")
+
+            var img = document.createElement("img")
+            img.setAttribute("src", item.img_url)
+            img.setAttribute("id", "pro_img")
+            img.addEventListener("click", function(){
+                pro_desc(item)
+            })
+
+            var p1 = document.createElement("p")
+            p1.textContent = item.product
+            p1.setAttribute("class", "pro_p")
+
+            var p2 = document.createElement("p")
+            p2.textContent = item.pro_desc
+            p2.setAttribute("class", "pro_p")
+
+            var p3 = document.createElement("p")
+            p3.textContent = "$" + item.price
+            p3.setAttribute("class", "pro_p")
+
+            imgdiv.append(img,p1,p2,p3)
+            pro_div.append(imgdiv)
+        })
+
+        function pro_desc(item){
+            product_arr.push(item)
+            localStorage.setItem("product_desc", JSON.stringify(product_arr))
+            window.location.href = "product_page.html"
+        }
+    }
+</script>

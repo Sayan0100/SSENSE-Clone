@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        font-family: "Favorit SSENSE Inter";
+        color: #777;
+      }
+      #nav-div {
+        display: flex;
+        overflow: hidden;
+        background-color: whitesmoke;
+        position: fixed; 
+        top: 0; 
+        width: 100%;
+      }
+      #ul-left {
+        margin-top: 1%;
+        float: left;
+        margin-left: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      #ul-right {
+        margin-top: 1%;
+        float: right;
+        margin-right: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      ul li {
+        display: inline-block;
+        margin: 0px 8px;
+      }
+      a{
+        text-decoration: none;
+      }
+      #nav-img {
+        display: block;
+        text-align: center;
+        width: 500px;
+        height: 50px;
+      }
+      #nav-img img {
+        width: 30%;
+      }
+      #imgdiv{
+        width: 40%;
+        /* margin-left: 10%; */
+        margin: auto;
+        margin-top: 5%;
+        text-align: center;
+        height: 550px;
+      }
+      img{
+        height: 100%;
+      }
+      #pro_desc_div{
+        float: left;
+        width: 25%;
+        margin: 1%;
+        margin-top: 15%;
+      }
+      #pro_cart{
+        position: relative;
+        float: right;
+        width: 25%;
+        margin: 1%;
+        margin-top: 15%;
+      }
+      .pro_p{
+        margin: 2%;
+      }
+      #select{
+        margin: 2%;
+        width: 98%;
+        height: 40px;
+        cursor: pointer;
+      }
+      #pro_btn{
+        width: 50%;
+        background-color: black;
+        color: white;
+        height: 35px;
+        margin: 2%;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <div id="nav-div">
+        <ul id="ul-left">
+          <li><a href="menswear.html">Menswear</a></li>
+          <li><a href="womenswear.html">Womenswear</a></li>
+          <li><a href="everything_else.html">Everything Else</a></li>
+          <li>Search</li>
+        </ul>
+  
+        <div id="nav-img">
+          <a href="home.html"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQxx9bVGOKyglaEmi0mXikGtNlNS-4i0taYypO10wlpsfX-j_IHXNl79dlBQElwI_bw&usqp=CAU"
+          /></a>
+        </div>
+        <ul id="ul-right">
+          <li>ENGLISH</li>
+          <li><a href="login.html">Login</a></li>
+          <li>Whishlist</li>
+          <li><a href="shopping_bag.html">Shopping List</a></li>
+        </ul>
+      </div>
+        <select name="" id="select">
+          <option value="--">Select Size</option>
+          <option value="XS/S">XS/S</option>
+          <option value="M">M</option>
+          <option value="L/XL">L/XL</option>
+        </select>
+      
+</body>
+</html>
+<script>
+     var products = JSON.parse(localStorage.getItem("product_desc"))
+    
+    showproduct(products)
+
+    var cart_storage = JSON.parse(localStorage.getItem("cartItem")) || [];
+
+    function showproduct(products){
+      products.map(function(item){
+            var imgdiv = document.createElement("div")
+            imgdiv.setAttribute("id", "imgdiv")
+
+            var pro_desc_div = document.createElement("div")
+            pro_desc_div.setAttribute("id", "pro_desc_div")
+
+            var pro_cart = document.createElement("div")
+            pro_cart.setAttribute("id", "pro_cart")
+
+            var img = document.createElement("img")
+            img.setAttribute("src", item.img_url)
+
+            var p1 = document.createElement("p")
+            p1.textContent = item.product
+            p1.setAttribute("class", "pro_p")
+
+            var p2 = document.createElement("p")
+            p2.textContent = item.pro_desc
+            p2.setAttribute("class", "pro_p")
+
+            var p3 = document.createElement("p")
+            p3.textContent = "$" + item.price
+            p3.setAttribute("class", "pro_p")
+
+            var select = document.getElementById("select")
+
+            var btn = document.createElement("button")
+            btn.setAttribute("id", "pro_btn")
+            btn.textContent = "ADD TO BAG"
+            btn.addEventListener("click", function(){
+              addtoCart(item)
+            })
+
+            imgdiv.append(img)
+            pro_desc_div.append(p1,p2)
+            pro_cart.append(p3,select,btn)
+            document.querySelector("body").append(pro_desc_div,pro_cart,imgdiv)
+        })
+
+        function addtoCart(item){
+          cart_storage.push(item)
+          localStorage.setItem("cartItem", JSON.stringify(cart_storage))
+          window.location.href = "shopping_bag.html"
+        }
+    }
+</script>

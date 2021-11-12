@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Favorit SSENSE Inter";
+      }
+      #nav-div {
+        display: flex;
+        overflow: hidden;
+        background-color: whitesmoke;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      #ul-left {
+        margin-top: 1%;
+        float: left;
+        margin-left: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      #ul-right {
+        margin-top: 1%;
+        float: right;
+        margin-right: 20px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+      }
+      ul li {
+        display: inline-block;
+        margin: 0px 8px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      #nav-img {
+        display: block;
+        text-align: center;
+        width: 500px;
+        height: 50px;
+      }
+      #nav-img img {
+        width: 30%;
+      }
+      #data-div1 {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 3%;
+        margin: 3%;
+      }
+      #img1 {
+        width: 100%;
+      }
+      #spn1 {
+        font-size: 20px;
+        font-weight: 300;
+      }
+      #span2 {
+        font-size: 22px;
+        font-weight: 400;
+        margin: 1%;
+        margin-left: 2%;
+      }
+      #p1 {
+        font-size: 22px;
+        font-size: 200;
+      }
+      #data-div2 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 3%;
+        margin: 2%;
+      }
+      #img2 {
+        width: 100%;
+      }
+      #data-div3 {
+        display: grid;
+        grid-template-columns: 48% 48%;
+        grid-gap: 4%;
+        margin: 3%;
+      }
+      #img3 {
+        width: 98%;
+      }
+      #data-div4 {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 3%;
+        margin: 3%;
+      }
+      #img4 {
+        width: 98%;
+      }
+      #imgdiv4_btn {
+        padding: 1%;
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+      #data-div5 {
+        display: inline-block;
+        
+        width: 50%;
+        margin: 1%;
+      }
+      #imgdiv5_1 {
+        display: inline-block;
+        width: 50%;
+        
+        margin: 2%;
+      }
+      #imgdiv5_2 {
+        display: inline-block;
+        
+        vertical-align: top;
+        margin: 2%;
+      }
+      #img5 {
+        width: 100%;
+      }
+      #imgdiv5_p2 {
+        margin-top: 15%;
+      }
+      #data-div6 {
+        display: inline-block;
+        width: 20%;
+        
+      }
+      #img6 {
+        width: 100%;
+      }
+      #imgdiv6_p {
+        padding-bottom: 10%;
+      }
+      #data-div7 {
+        display: inline-block;
+        
+        width: 20%;
+        margin: 2%;
+      }
+      #imgdiv7_1 {
+        display: inline-block;
+        width: 30%;
+        
+        padding: 1%;
+      }
+      #imgdiv7_2 {
+        display: inline-block;
+        
+        margin: 1%;
+        margin-left: 3%;
+        width: 62%;
+        vertical-align: top;
+      }
+      #img7 {
+        width: 100%;
+      }
+      #imgdiv7_p2 {
+        margin-top: 22%;
+      }
+      #data-div8 {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 3%;
+        margin: 3%;
+      }
+      #img8 {
+        width: 98%;
+      }
+      #imgdiv8_btn {
+        padding: 1%;
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+      #imgdiv9 {
+        text-align: center;
+      }
+      #imgdiv9_h1 {
+        font-size: 80px;
+        margin: 5%;
+        font-weight: 400;
+      }
+      #imgdiv9_h2 {
+        font-size: 50px;
+        margin: 4%;
+        font-weight: 400;
+      }
+      #imgdiv9_btn9 {
+        padding: 1%;
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+      #data-div10 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 3%;
+        margin: 2%;
+      }
+      #img10 {
+        width: 100%;
+      }
+      #data-div11 {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 3%;
+        margin: 3%;
+      }
+      #img11 {
+        width: 98%;
+      }
+      #imgdiv11_btn {
+        padding: 1%;
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+      #data-div12 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 3%;
+        margin: 2%;
+      }
+      #img12 {
+        width: 100%;
+      }
+      #footer {
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        background-color: black;
+        width: 100%;
+        height: 35px;
+      }
+      .footer1 {
+        width: 90%;
+        color: #777;
+        margin-left: 20%;
+      }
+      .footer1 span {
+        margin: 1%;
+        font-size: 12px;
+      }
+      .footer2 {
+        width: 30%;
+        color: #777;
+        margin: auto;
+      }
+      .footer2 span {
+        margin: 1%;
+        font-size: 11px;
+      }
+       span:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav-div">
+      <ul id="ul-left">
+        <li><a href="menswear.html">Menswear</a></li>
+        <li><a href="womenswear.html">Womenswear</a></li>
+        <li><a href="everything_else.html">Everything Else</a></li>
+        <li>Search</li>
+      </ul>
+
+      <div id="nav-img">
+        <a href="home.html"><img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQxx9bVGOKyglaEmi0mXikGtNlNS-4i0taYypO10wlpsfX-j_IHXNl79dlBQElwI_bw&usqp=CAU"
+        /></a>
+      </div>
+      <ul id="ul-right">
+        <li>ENGLISH</li>
+        <li><a href="login.html">Login</a></li>
+        <li>Whishlist</li>
+        <li><a href="shopping_bag.html">Shopping List</a></li>
+      </ul>
+    </div>
+    <div id="data-div1"></div>
+    <div id="data-div2"></div>
+    <div id="data-div3"></div>
+    <div id="data-div4"></div>
+    <div id="data-div5"></div>
+    <div id="data-div6"></div>
+    <div id="data-div7"></div>
+    <div id="data-div8"></div>
+    <div id="data-div9"></div>
+    <div id="data-div10"></div>
+    <div id="data-div11"></div>
+    <div id="data-div12"></div>
+    <div id="footer">
+      <div class="footer1">
+        <span>COUNTRY/REGION : INDIA</span><span>CUSTOMER CARE</span
+        ><span>LOCATION</span><span>EDITORIAL ARCHIVE</span><span>CAREERS</span
+        ><span>AFFILATES</span><span>SITEMAP</span>
+      </div>
+      <div class="footer2">
+        <span>2021 ssense.com</span><span>Terms & Conditions</span
+        ><span>Privacy Policy</span><span>Cookies</span
+        ><span>Accessibility</span>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var data1 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1636466779/waisx4vstvnuat9ixpls.jpg",
+      category: "Fashion",
+      desc1: "MONCLER GENIOUS",
+      desc2: "Fashion with High VALUE",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1636466785/d0gi0iy1tudqhdrviccj.jpg",
+      category: "Market",
+      desc1: "MONCLER GENIOUS",
+      desc2: "Fashion with High VALUE",
+    },
+  ];
+  var data2 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1636384701/zuikxzkdot2gvbbp2bv9.jpg",
+      timing: "RECENT",
+      desc: "IT'S SNEAKER SEASON",
+      date: "Culture | Oct 27",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1635866939/izaiucojkaxeotofled8.jpg",
+      timing: "RECENT",
+      desc: "SALIE 66, SALIE HATIE, SALIE SWEATERS",
+      date: "Culture | NOV 7",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1635973284/hhqlyzkntn1cqivflgrr.jpg",
+      timing: "RECENT",
+      desc: "GRAPHIC CONTENT",
+      date: "Culture | NOV 5",
+    },
+  ];
+  var data3 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1591098045/rmku32i48ohhvrds1w3j.jpg",
+      category: "Culture",
+      st1: "BLACK LIVES MATTER : A WORKING RESORCE FOR MOBILIZING",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1634907046/utgnvp77vl1avki7zonl.jpg",
+      category: "Culture",
+      st1: "YOUR TICKET TO A HEALTHY GLOW",
+      st2: "With Chakrubs and D.S durga",
+    },
+  ];
+  var data4 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1636380555/eciugu7no5p8mxiuwcgt.jpg",
+      category: "FEATURED",
+      desc: "EMANUEELE BICHOOICHE",
+      btn1: "SHOP MENSWEAR",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1636380150/fbun7hajpr7llbquckqn.jpg",
+      category: "FEATURED",
+      desc: "SAINT LOREN",
+      btn1: "SHOP WOMENSWEAR",
+    },
+  ];
+  var data5 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1635455172/o7jsdgsymn3n6uylzfvm.jpg",
+      desc1: "WHAT COMFORT LIES",
+      category: "FEATURED",
+      desc2: "The best Heron Preston for Clalin Klein",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1635338398/ccaiw1hcuur5q24chmwz.jpg",
+      desc1: "WITH MY LITTLE EYE",
+      category: "FEATURED",
+      desc2: "In a game of I-spy",
+    },
+  ];
+  var data6 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1635173076/m9woruikkc7obayxhlql.jpg",
+      desc: "NOTHING SCARCE",
+      timing: "Fashion | Oct 27",
+    },
+  ];
+  var data7 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1629230194/tc6bszig46d8mteqqbwg.jpg",
+      desc: "ON THE MEND: A VISIBLE MENDING RENAISSENSE",
+      category: "FASHION",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1627492596/oauqeahswfc63fmcscze.jpg",
+      desc: "TINKER, TRAILER, TOOTHPASTE SLIDES",
+      category: "FASHION",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1625756471/tanvsjm7nknfyplagiax.jpg",
+      desc: "CONSIDER THE SROOM",
+      category: "FASHION",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1618511656/x1nq39rzrge3jqjpt3lu.jpg",
+      desc: "DENIM MONOGAMIST",
+      category: "FASHION",
+    },
+  ];
+  var data8 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1636380981/akos0ckdfgz5hwnxwbhe.jpg",
+      category: "FEATURED",
+      desc: "YEVES SALOMON",
+      btn1: "SHOP MENSWEAR",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1636381022/yzk5tvi12deb5eqssioj.jpg",
+      category: "FEATURED",
+      desc: "YEVES SALOMON",
+      btn1: "SHOP WOMENSWEAR",
+    },
+  ];
+  var data9 = [
+    {
+      info1: "PHARRELL WILLIAMS FINDS HIS BALANCE WITH HUMANRACE",
+      info2: "A Conversation About Rituals, Visions, And Faiths",
+    },
+  ];
+  var data10 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1633531640/eb7afnzgrwiwus2appay.jpg",
+      timing: "RECENT",
+      desc: "COOL COZY KIDSWEAR",
+      date: "Culture | Oct 27",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1631551867/ptywj1z0kprwbagsvhd5.jpg",
+      timing: "RECENT",
+      desc: "NOTHING SCERCSE",
+      date: "Culture | Oct 27",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1631114059/irjunjmlxuyea4xecqkl.jpg",
+      timing: "RECENT",
+      desc: "NOTHING SCERCSE",
+      date: "Culture | Oct 27",
+    },
+  ];
+  var data11 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1635778738/vyp7ftpzbvhoxgh5vmue.jpg",
+      category: "FEATURED",
+      desc: "LORO PIANA",
+      btn1: "SHOP MENSWEAR",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_768,q_90,f_auto,dpr_auto/v1635778924/zpztfhmk28w6szqpasqh.jpg",
+      category: "FEATURED",
+      desc: "LORO PIANA",
+      btn1: "SHOP WOMENSWEAR",
+    },
+  ];
+  var data12 = [
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1633369883/uttj2shxt99kpjyqcoxg.jpg",
+      timing: "RECENT",
+      desc: "ALL DAY WE DREAM ABOUT PLAY",
+      date: "Culture | Oct 14",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1634049360/o6zokvd5hbvhzjapbt1r.jpg",
+      timing: "RECENT",
+      desc: "ETERNE DAYS OF HEAVEN",
+      date: "Culture | Oct 16",
+    },
+    {
+      img_url:
+        "https://res.cloudinary.com/ssenseweb/image/upload/w_480,q_90,f_auto,dpr_auto/v1632496733/c8rgkbauyckvruhkt8k4.jpg",
+      timing: "RECENT",
+      desc: "NOTHING SCERCSE",
+      date: "Culture | Oct 12",
+    },
+  ];
+  var body = document.querySelector("body");
+  var div1 = document.getElementById("data-div1");
+  var div2 = document.getElementById("data-div2");
+  var div3 = document.getElementById("data-div3");
+  var div4 = document.getElementById("data-div4");
+  var div5 = document.getElementById("data-div5");
+  var div6 = document.getElementById("data-div6");
+  var div7 = document.getElementById("data-div7");
+  var div8 = document.getElementById("data-div8");
+  var div9 = document.getElementById("data-div9");
+  var div10 = document.getElementById("data-div10");
+  var div11 = document.getElementById("data-div11");
+  var div12 = document.getElementById("data-div12");
+  body.append(
+    div1,
+    div2,
+    div3,
+    div4,
+    div5,
+    div6,
+    div7,
+    div8,
+    div9,
+    div10,
+    div11,
+    div12
+  );
+  showproduct1();
+  showproduct2();
+  showproduct3();
+  showproduct4();
+  showproduct5();
+  showproduct6();
+  showproduct7();
+  showproduct8();
+  showproduct9();
+  showproduct10();
+  showproduct11();
+  showproduct12();
+
+  function showproduct1() {
+    data1.map(function (item) {
+      var imgdiv1 = document.createElement("div");
+
+      var img1 = document.createElement("img");
+      img1.setAttribute("src", item.img_url);
+      img1.setAttribute("id", "img1");
+
+      var span1 = document.createElement("span");
+      span1.textContent = item.category;
+      span1.setAttribute("id", "span1");
+
+      var span2 = document.createElement("span");
+      span2.textContent = item.desc1;
+      span2.setAttribute("id", "span2");
+
+      var p1 = document.createElement("p");
+      p1.textContent = item.desc2;
+      p1.setAttribute("id", "p1");
+
+      imgdiv1.append(img1, span1, span2, p1);
+
+      div1.append(imgdiv1);
+    });
+  }
+  function showproduct2() {
+    data2.map(function (item) {
+      var imgdiv2 = document.createElement("div");
+
+      var img2 = document.createElement("img");
+      img2.setAttribute("src", item.img_url);
+      img2.setAttribute("id", "img2");
+
+      var span3 = document.createElement("span");
+      span3.textContent = item.timing;
+
+      var span4 = document.createElement("span");
+      span4.textContent = item.desc;
+
+      var p2 = document.createElement("p");
+      p2.textContent = item.date;
+
+      imgdiv2.append(img2, span3, span4, p2);
+
+      div2.append(imgdiv2);
+    });
+  }
+  function showproduct3() {
+    data3.map(function (item) {
+      var imgdiv3 = document.createElement("div");
+
+      var img3 = document.createElement("img");
+      img3.setAttribute("src", item.img_url);
+      img3.setAttribute("id", "img3");
+
+      var span5 = document.createElement("span");
+      span5.textContent = item.category;
+
+      var span6 = document.createElement("span");
+      span6.textContent = item.st1;
+
+      var p3 = document.createElement("p");
+      p3.textContent = item.st2;
+
+      imgdiv3.append(img3, span5, span6, p3);
+
+      div3.append(imgdiv3);
+    });
+  }
+  function showproduct4() {
+    data4.map(function (item) {
+      var imgdiv4 = document.createElement("div");
+      imgdiv4.setAttribute("id", "imgdiv4");
+
+      var img4 = document.createElement("img");
+      img4.setAttribute("src", item.img_url);
+      img4.setAttribute("id", "img4");
+
+      var span7 = document.createElement("span");
+      span7.textContent = item.category;
+
+      var h3 = document.createElement("h3");
+      h3.textContent = item.desc;
+
+      var btn = document.createElement("button");
+      btn.textContent = item.btn1;
+      btn.setAttribute("id", "imgdiv4_btn");
+
+      imgdiv4.append(img4, span7, h3, btn);
+
+      div4.append(imgdiv4);
+    });
+  }
+  function showproduct5() {
+    data5.map(function (item) {
+      var imgdiv5_1 = document.createElement("div");
+      imgdiv5_1.setAttribute("id", "imgdiv5_1");
+
+      var imgdiv5_2 = document.createElement("div");
+      imgdiv5_2.setAttribute("id", "imgdiv5_2");
+
+      var img5 = document.createElement("img");
+      img5.setAttribute("src", item.img_url);
+      img5.setAttribute("id", "img5");
+
+      var h2 = document.createElement("h2");
+      h2.textContent = item.desc1;
+
+      var p1 = document.createElement("p");
+      p1.textContent = item.category;
+
+      var p2 = document.createElement("p");
+      p2.textContent = item.desc2;
+      p2.setAttribute("id", "imgdiv5_p2");
+
+      imgdiv5_1.append(img5);
+      imgdiv5_2.append(h2, p1, p2);
+      div5.append(imgdiv5_1, imgdiv5_2);
+    });
+  }
+  function showproduct6() {
+    data6.map(function (item) {
+      var imgdiv6 = document.createElement("div");
+      imgdiv6.setAttribute("id", "imgdiv6");
+
+      var img6 = document.createElement("img");
+      img6.setAttribute("src", item.img_url);
+      img6.setAttribute("id", "img6");
+
+      var h2 = document.createElement("h2");
+      h2.textContent = item.desc;
+
+      var p = document.createElement("p");
+      p.textContent = item.timing;
+      p.setAttribute("id", "imgdiv6_p");
+
+      imgdiv6.append(img6, h2, p);
+      div6.append(imgdiv6);
+    });
+  }
+  function showproduct7() {
+    data7.map(function (item) {
+      var imgdiv7_1 = document.createElement("div");
+      imgdiv7_1.setAttribute("id", "imgdiv7_1");
+
+      var imgdiv7_2 = document.createElement("div");
+      imgdiv7_2.setAttribute("id", "imgdiv7_2");
+
+      var img7 = document.createElement("img");
+      img7.setAttribute("src", item.img_url);
+      img7.setAttribute("id", "img7");
+
+      var p1 = document.createElement("p");
+      p1.textContent = item.desc;
+
+      var p2 = document.createElement("p");
+      p2.textContent = item.category;
+      p2.setAttribute("id", "imgdiv7_p2");
+
+      imgdiv7_1.append(img7);
+      imgdiv7_2.append(p1, p2);
+      div7.append(imgdiv7_1, imgdiv7_2);
+    });
+  }
+  function showproduct8() {
+    data8.map(function (item) {
+      var imgdiv8 = document.createElement("div");
+      imgdiv8.setAttribute("id", "imgdiv8");
+
+      var img8 = document.createElement("img");
+      img8.setAttribute("src", item.img_url);
+      img8.setAttribute("id", "img8");
+
+      var span7 = document.createElement("span");
+      span7.textContent = item.category;
+
+      var h3 = document.createElement("h3");
+      h3.textContent = item.desc;
+
+      var btn = document.createElement("button");
+      btn.textContent = item.btn1;
+      btn.setAttribute("id", "imgdiv8_btn");
+
+      imgdiv8.append(img8, span7, h3, btn);
+
+      div8.append(imgdiv8);
+    });
+  }
+  function showproduct9() {
+    data9.map(function (item) {
+      var imgdiv9 = document.createElement("div");
+      imgdiv9.setAttribute("id", "imgdiv9");
+
+      var h1 = document.createElement("h1");
+      h1.textContent = item.info1;
+      h1.setAttribute("id", "imgdiv9_h1");
+
+      var h2 = document.createElement("h2");
+      h2.textContent = item.info2;
+      h2.setAttribute("id", "imgdiv9_h2");
+
+      var btn9 = document.createElement("button");
+      btn9.textContent = "SHOW EDITORIAL";
+      btn9.setAttribute("id", "imgdiv9_btn9");
+
+      imgdiv9.append(h1, h2, btn9);
+      div9.append(imgdiv9);
+    });
+  }
+  function showproduct10() {
+    data10.map(function (item) {
+      var imgdiv10 = document.createElement("div");
+
+      var img10 = document.createElement("img");
+      img10.setAttribute("src", item.img_url);
+      img10.setAttribute("id", "img10");
+
+      var span3 = document.createElement("span");
+      span3.textContent = item.timing;
+
+      var span4 = document.createElement("span");
+      span4.textContent = item.desc;
+
+      var p2 = document.createElement("p");
+      p2.textContent = item.date;
+
+      imgdiv10.append(img10, span3, span4, p2);
+
+      div10.append(imgdiv10);
+    });
+  }
+  function showproduct11() {
+    data11.map(function (item) {
+      var imgdiv11 = document.createElement("div");
+      imgdiv11.setAttribute("id", "imgdiv11");
+
+      var img11 = document.createElement("img");
+      img11.setAttribute("src", item.img_url);
+      img11.setAttribute("id", "img11");
+
+      var span7 = document.createElement("span");
+      span7.textContent = item.category;
+
+      var h3 = document.createElement("h3");
+      h3.textContent = item.desc;
+
+      var btn = document.createElement("button");
+      btn.textContent = item.btn1;
+      btn.setAttribute("id", "imgdiv11_btn");
+
+      imgdiv11.append(img11, span7, h3, btn);
+
+      div11.append(imgdiv11);
+    });
+  }
+  function showproduct12() {
+    data12.map(function (item) {
+      var imgdiv12 = document.createElement("div");
+
+      var img12 = document.createElement("img");
+      img12.setAttribute("src", item.img_url);
+      img12.setAttribute("id", "img12");
+
+      var span3 = document.createElement("span");
+      span3.textContent = item.timing;
+
+      var span4 = document.createElement("span");
+      span4.textContent = item.desc;
+
+      var p2 = document.createElement("p");
+      p2.textContent = item.date;
+
+      imgdiv12.append(img12, span3, span4, p2);
+
+      div12.append(imgdiv12);
+    });
+  }
+</script>
+
+font-family: "Favorit SSENSE Inter"; color: #777;
